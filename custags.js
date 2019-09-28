@@ -90,31 +90,16 @@ class h1 extends HTMLElement{
         shadow.appendChild(h1);
     }
 }
+
 class code extends HTMLElement{
     constructor(){
         super();
         const shadow = this.attachShadow({
             mode: 'open'
           });
-        const div = document.createElement('div');
-        div.style.cssText = "display:inline-block; background-color: #c2c2c2; max-width:100%;";
-        
-        const p = document.createElement('p');
-        p.style.cssText = "font-family : 'Monospace', monospace; max-width:100%;";
-        p.textContent = super.textContent;
-        div.appendChild(p);
-        shadow.appendChild(div);
-    }
-}
-class p extends HTMLElement{
-    constructor(){
-        super();
-        const shadow = this.attachShadow({
-            mode: 'open'
-          });
-        const p = document.createElement('p');
-        p.textContent = super.textContent;
-        shadow.appendChild(p);
+        const code = document.createElement('code');
+        code.textContent = super.textContent;
+        shadow.appendChild(code);
     }
 }
 const cusTags = new Object();
