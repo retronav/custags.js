@@ -26,6 +26,7 @@ Just :relaxed: and do this:-
 ```javascript 
 cusTags.register('foo-bar', button); //hyphen compulsory
 ```
+# Supports All Elements
 # Use it!
 ```html
 <weather-module>
