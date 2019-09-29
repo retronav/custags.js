@@ -22,10 +22,16 @@ Just :relaxed: and do this:-
 ```html 
 <script src="https://bit.ly/custags"></script>
 ```
+## We got a selector i.e Ω ... type in Alt+234  and the magic!
 # Define it
 ```javascript 
-cusTags.register('foo-bar', button); //hyphen compulsory
+Ω('lol-foo').register(button); //hyphen compulsory
 ```
+# Functions alloted:-
+* register():- define element
+* css():- add your own css
+* value():- return value
+* Ω().load():- do things ater documwnt loads
 # Supports All Elements
 # Use it!
 ```html
