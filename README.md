@@ -20,7 +20,7 @@ So coding in div soup is good, uh?
 Just :relaxed: and do this:-
 # Add this in your website for a sexy layout!
 ```html 
-<script src="https://bit.ly/custags"></script>
+<script src="https://bit.ly/custagsjs"></script>
 ```
 ## We got a selector i.e Ω ... type in Alt+234  and the magic!
 # Define it
@@ -47,5 +47,5 @@ Just :relaxed: and do this:-
 ## A dev said to me => I'm gonna use this right now!
 ## You too use this:- add this in your code:- 
 ```html
- <script src="https://bit.ly/custags"></script>
+ <script src="https://bit.ly/custagsjs"></script>
 ```
