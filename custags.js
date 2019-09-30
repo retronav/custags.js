@@ -128,12 +128,6 @@ function Ω(selector){
     self.register = (val)=>{
        val(selector);   
     }
-    self.h1 = ()=>{
-        h1(selector);
-    }
-    self.h5 = ()=>{
-        h5(selector);
-    }
     self.css = function(style){
         const el = document.querySelector(selector);
         el.style.cssText = style;
