@@ -35,6 +35,7 @@ Just :relaxed: and do this:-
 * register():- define element
 * css():- add your own css
 * value():- return value
+* ready() :- do things after document is ready, like jQuery
 * Ω().load():- do things ater documwnt loads
 # Supports All Elements
 # Use it!
