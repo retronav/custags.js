@@ -1,3 +1,12 @@
+const div = (tag) => {
+  const ptag = document.querySelector(tag);
+        const shadow = ptag.attachShadow({
+            mode: 'open'
+          });
+        const div = document.createElement('div');
+        div.innerHTML = ptag.textContent;
+        shadow.appendChild(div);
+    }
 const textarea = (tag) => {
     const ptag = document.querySelector(tag);
           const shadow = ptag.attachShadow({
@@ -134,16 +143,14 @@ function Ω(selector){
         const el = document.querySelector(selector).value;
         console.log(el);
     }
-    self.extends = (tag) => {
-        
-    }
-    self.ready = (fn) => {
-        if (document.readyState === 'complete') {
-            // The page is fully loaded
-            eval(fn);
-            
-            
-          }
+    self.ready = (callback) => { 
+    if (selector.readyState!='loading') callback();
+    // modern browsers
+    else if (selector.addEventListener) selector.addEventListener('DOMContentLoaded', callback);
+    // IE <= 8
+    else selector.attachEvent('onreadystatechange', function(){
+        if (selector.readyState=='complete') callback();
+    });
     }
     return self;
 }
