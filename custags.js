@@ -123,8 +123,7 @@ function Ω(selector){
     self.element = document.querySelector(self.selector);
     
     self.load = function(fn){
-        window.onload = fn;
-        return fn;
+        selector.onload = fn();
     }
     self.register = (val)=>{
        val(selector);   
