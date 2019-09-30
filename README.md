@@ -20,6 +20,10 @@ So coding in div soup is good, uh?
 Just :relaxed: and do this:-
 # Add this in your website for a sexy layout!
 ```html 
+<script src="https://bit.ly/custagsmin"></script>
+```
+# or the unminified
+```html
 <script src="https://bit.ly/custagsjs"></script>
 ```
 ## We got a selector i.e Ω ... type in Alt+234  and the magic!
@@ -45,7 +49,12 @@ Just :relaxed: and do this:-
 ```
 # Just That?! :astonished:
 ## A dev said to me => I'm gonna use this right now!
-## You too use this:- add this in your code:- 
+## You too use this:- add this in your code:- (minified)
 ```html
- <script src="https://bit.ly/custagsjs"></script>
+ <script src="https://bit.ly/custagsmin"></script>
+```
+
+# or original uncompressed
+```html
+<script src="https://bit.ly/custagsjs"></script>
 ```
