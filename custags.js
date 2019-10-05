@@ -244,7 +244,7 @@ console.log('AdBlock Enabled? ', adBlockEnabled)
     }
   };
   domElement.prototype.register = function(type){
-      eval(type+'("'+this.selector+'")');
+      type(this.selector);
   }
    domElement.prototype.eventHandler = {
     events: [],
