@@ -29,7 +29,7 @@ Just :relaxed: and do this:-
 ## We got a selector i.e Ω ... type in Alt+234  and the magic!
 # Define it
 ```javascript 
-Ω('lol-foo').register(button); //hyphen compulsory
+Ω('lol-foo').register('button'); //hyphen compulsory
 ```
 # Functions alloted:-
 * register():- define element
