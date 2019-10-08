@@ -1,61 +1,50 @@
 # custags.js
-Custom elements. Possible.
-# Why Custags?
-You might code in with a div soup like this:-
+A library that unleashes the power of custom elements.
+A library that makes complicated functions short and sweet.
+For the minified version, add this:-
 ```html
-<div class="gdfd44">
-    <div class="fdgd34">
-    <div class="6yj5"></div>
-    <div class="72344378g"></div>
-    <div class="658yg"></div>
-    <div class="iuf8"></div>  
-    </div>
-</div>
+<script  src="https://bit.ly/custagsmin"></script>
 ```
-or like this:-
-![Div soup](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1444056722gmail-div-soup.png)
-So coding in div soup is good, uh?
-#### :angry: *DITCH THAT FREAKING DIV TAG!*
-###  Custags is here to Save You!
-Just :relaxed: and do this:-
-# Add this in your website for a sexy layout!
-```html 
-<script src="https://bit.ly/custagsmin"></script>
-```
-# or the unminified
+For the unminified version, add this:-
 ```html
-<script src="https://bit.ly/custagsjs"></script>
+<script  src="https://bit.ly/custagsjs"></script>
 ```
-## We got a selector i.e Ω ... type in Alt+234  and the magic!
-# Define it
+# Modules Included
+## The `Ω` module
+This Ω(omega) module has the following syntax:-
+```javascript
+Ω(selector).somefunction();
+```
+Selector is added in single or double quotes. This syntax is similar to that of jQuery.
+##### Functions added
+* `html()`=> returns innerHTML if null; set innerHTML if value present.
+* `val()`=>  returns value of any input-related element.
+* `on()`and `off()`=> add or remove event listeners, respctively.
+*  `append()`and `prepend()`=> add innerHTML after and before the existing innerHTML, respectively.
+*  `text()`=> similar like html(), `textContent` in this case.
+* `detectAdBlock()` pass one of the two strings for the following:-
+> 'mild' => a mild notification at the bottom of website
+> 'harsh' => aggressive; removes all content of site and displays a text 'Please disable your adBlocker'.
+* `register()`=> register you custom element with a html property. These include:- 
+> for the desired tag, just type the tag name without arrow brackets and inverted commas
+> for an input, type like this:-
+>>  for input type-'text', inputText
+>> for input type="datetime-local", inputDateTimeLocal
+* `extendcss(element1, element2)`=> function that inherits all attributes from element1 and passes to element2.
+## the `zax` module
+The `zax` module does functions of fetching JSON and XML documents.
+##### Functions included
+* `zax.getJSON(url , (object){})`=> this function gets JSON from the `url` and you can do stuff inside the function. You can name anything in the `object` parameter and it will be used to get values, like:-
+> lol.json contents
+```json
+ "name" : "custags.js"
+ ```
+>To get the `name`, you do:-
 ```javascript 
-Ω('lol-foo').register(button); //hyphen compulsory
+const url = "lol.json";
+zax.getJSON(url , (res){
+console.log(res.name);
+});`
+//results "custags.js"
 ```
-# Functions alloted:-
-* register():- define element
-* css():- add your own css
-* value():- return value
-* ready() :- do things after document is ready, like jQuery
-* Ω().load():- do things ater documwnt loads
-# Supports All Elements
-# Use it!
-```html
-<weather-module>
-    <app-holder>
-        <temp-data></temp-data>
-        <name-data></name-data>
-        <details-holder></details-holder>
-    </app-holder>
-</weather-module>
-```
-# Just That?! :astonished:
-## A dev said to me => I'm gonna use this right now!
-## You too use this:- add this in your code:- (minified)
-```html
- <script src="https://bit.ly/custagsmin"></script>
-```
-
-# or original uncompressed
-```html
-<script src="https://bit.ly/custagsjs"></script>
-```
+* `zax.getXML(url , (object){})`=> this function gets XML from the `url` and you can do stuff inside the function. Usage similar like `zax.getJSON`.
