@@ -1,7 +1,8 @@
 # custags.js
 ![logo](https://raw.githubusercontent.com/obnoxiousnerd/custags.js/master/custags-logo.png)
- ## A library that unleashes the power of custom elements.
- ## A library that makes complicated functions short and sweet.
+## A library that unleashes the power of custom elements.
+ 
+## A library that makes complicated functions short and sweet.
 For the minified version, add this:-
 ```html
 <script  src="https://bit.ly/custagsmin"></script>
