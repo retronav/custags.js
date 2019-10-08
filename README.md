@@ -15,7 +15,7 @@ For the unminified version, add this:-
 ## The `Ω` module
 This Ω(omega) module has the following syntax:-
 ```javascript
-Ω(selector).somefunction();
+Ω('selector').somefunction();
 ```
 Selector is added in single or double quotes. This syntax is similar to that of jQuery.
 ##### Functions added
@@ -30,22 +30,22 @@ Selector is added in single or double quotes. This syntax is similar to that of 
 
 * * 'harsh' => aggressive; removes all content of site and displays a text 'Please disable your adBlocker'.
 * `register()`=> register you custom element with a html property. These include:- 
-> for the desired tag, just type the tag name without arrow brackets and inverted commas
+* * for the desired tag, just type the tag name without arrow brackets and inverted commas
 
-> for an input, type like this:-
->>  for input type='text', inputText
+* * for an input, type like this:-
+* *  for input type='text', inputText
 
->> for input type="datetime-local", inputDateTimeLocal
+* * for input type="datetime-local", inputDateTimeLocal
 * `extendcss(element1, element2)`=> function that inherits all attributes from element1 and passes to element2.
 ## the `zax` module
 The `zax` module does functions of fetching JSON and XML documents.
 ##### Functions included
 * `zax.getJSON(url , (object){})`=> this function gets JSON from the `url` and you can do stuff inside the function. You can name anything in the `object` parameter and it will be used to get values, like:-
-> lol.json contents
+* * lol.json contents
 ```json
  "name" : "custags.js"
  ```
->To get the `name`, you do:-
+* * To get the `name`, you do:-
 ```javascript 
 const url = "lol.json";
 zax.getJSON(url , (res){
