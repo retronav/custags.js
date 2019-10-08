@@ -1,6 +1,6 @@
 # custags.js
-A library that unleashes the power of custom elements.
-A library that makes complicated functions short and sweet.
+> ## A library that unleashes the power of custom elements.
+> ## A library that makes complicated functions short and sweet.
 For the minified version, add this:-
 ```html
 <script  src="https://bit.ly/custagsmin"></script>
@@ -22,6 +22,7 @@ Selector is added in single or double quotes. This syntax is similar to that of 
 * `on()`and `off()`=> add or remove event listeners, respctively.
 *  `append()`and `prepend()`=> add innerHTML after and before the existing innerHTML, respectively.
 *  `text()`=> similar like html(), `textContent` in this case.
+*  `css()`=> set CSS of a particular element.
 * `detectAdBlock()` pass one of the two strings for the following:-
 > 'mild' => a mild notification at the bottom of website
 
