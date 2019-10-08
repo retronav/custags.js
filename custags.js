@@ -246,6 +246,18 @@ console.log('AdBlock Enabled? ', adBlockEnabled)
   domElement.prototype.register = function(type){
       type(this.selector);
   }
+  domElement.prototype.ready = (callback) => { 
+    if (this.selector.readyState!='loading') callback();
+    // modern browsers
+    else if (this.selector.addEventListener) this.selector.addEventListener('DOMContentLoaded', callback);
+    // IE <= 8
+    else this.selector.attachEvent('onreadystatechange', function(){
+        if (this.selector.readyState=='complete') callback();
+    });
+    }
+  domElement.prototype.load = (fn) => {
+    this.selector.onload = fn();
+  }
    domElement.prototype.eventHandler = {
     events: [],
     bindEvent: function(event, callback, targetElement) {
