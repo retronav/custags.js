@@ -28,8 +28,10 @@ Selector is added in single or double quotes. This syntax is similar to that of 
 > 'harsh' => aggressive; removes all content of site and displays a text 'Please disable your adBlocker'.
 * `register()`=> register you custom element with a html property. These include:- 
 > for the desired tag, just type the tag name without arrow brackets and inverted commas
+
 > for an input, type like this:-
->>  for input type-'text', inputText
+>>  for input type='text', inputText
+
 >> for input type="datetime-local", inputDateTimeLocal
 * `extendcss(element1, element2)`=> function that inherits all attributes from element1 and passes to element2.
 ## the `zax` module
