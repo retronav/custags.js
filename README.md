@@ -26,9 +26,9 @@ Selector is added in single or double quotes. This syntax is similar to that of 
 *  `text()`=> similar like html(), `textContent` in this case.
 *  `css()`=> set CSS of a particular element.
 * `detectAdBlock()` pass one of the two strings for the following:-
-> 'mild' => a mild notification at the bottom of website
+* * 'mild' => a mild notification at the bottom of website
 
-> 'harsh' => aggressive; removes all content of site and displays a text 'Please disable your adBlocker'.
+* * 'harsh' => aggressive; removes all content of site and displays a text 'Please disable your adBlocker'.
 * `register()`=> register you custom element with a html property. These include:- 
 > for the desired tag, just type the tag name without arrow brackets and inverted commas
 
