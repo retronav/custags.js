@@ -14,13 +14,13 @@ For the unminified version, add this:-
 # Modules Included
 ## The `Ω` module
 This Ω(omega) module has the following syntax:-
-`
+```javascript
 Ω('selector').somefunction();
-`
+```
 or simply
-`
+```javascript
 omega('selector').somefunction();
-`
+```
 Selector is added in single or double quotes. This syntax is similar to that of jQuery.
 ##### Functions added
 * `html()`=> returns innerHTML if null; set innerHTML if value present.
