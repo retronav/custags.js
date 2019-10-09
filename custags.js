@@ -300,6 +300,11 @@ domElement.prototype.ready = function(callback){
   el.init();
   return el;
  }
+ const omega = function(selector) {
+  var el = new domElement(selector);
+  el.init();
+  return el;
+ }
 var zax = {};
 zax.getJSON = function(url, fn){
   var request = new XMLHttpRequest();
@@ -342,3 +347,20 @@ request.onerror = function() {
 
 request.send();
 }
+zax.do = function(params){
+  var request = new XMLHttpRequest();
+request.open(params.type, params.url, true);
+
+request.onload = function() {
+  if (this.status >= 200 && this.status < 400) {
+    params.success(this.response);
+  }
+};
+
+request.onerror = function() {
+  params.error();
+};
+
+request.send();
+}
+
