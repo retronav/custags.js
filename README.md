@@ -14,9 +14,13 @@ For the unminified version, add this:-
 # Modules Included
 ## The `Ω` module
 This Ω(omega) module has the following syntax:-
-```javascript
+`
 Ω('selector').somefunction();
-```
+`
+or simply
+`
+omega('selector').somefunction();
+`
 Selector is added in single or double quotes. This syntax is similar to that of jQuery.
 ##### Functions added
 * `html()`=> returns innerHTML if null; set innerHTML if value present.
@@ -54,3 +58,19 @@ console.log(res.name);
 //results "custags.js"
 ```
 * `zax.getXML(url , (object){})`=> this function gets XML from the `url` and you can do stuff inside the function. Usage similar like `zax.getJSON`.
+* `zax.do()`=> this function is similar to like of jQuery's ajax function. You can do ajax things with it.
+Taking the `lol.json` here, we do:-
+```javascript
+zax.do({
+   type : 'GET',
+   url : 'lol.json',
+   success : function(json){
+      const res = JSON.parse(json);
+      console.log(res.name)
+   },
+   error: function(){
+      console.log('error');
+   }
+});
+//if successful, console shows 'custags.js' or 'error' if something happened.
+```
