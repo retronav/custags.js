@@ -152,123 +152,128 @@ const inputTime = inputBuild('time');
 const inputURL = inputBuild('url');
 const inputWeek = inputBuild('week');
 
-var domElement = function(selector) {
-  this.selector = selector || null;
-  this.element = null;
- };
- domElement.prototype.init = function() {
-  switch (this.selector[0]) {
-  case '<':
-  var matches = this.selector.match(/<([\w-]*)>/);
-  if (matches === null || matches === undefined) {
-  throw 'Invalid Selector / Node';
-  return false;
+class domElement {
+  constructor(selector) {
+    this.selector = selector || null;
+    this.element = null;
   }
-  var nodeName = matches[0].replace('<', '').replace('>', '');
-  this.element = document.createElement(nodeName);
-  break;
-  default:
-  this.element = document.querySelector(this.selector);
+  init() {
+    switch (this.selector[0]) {
+      case '<':
+        var matches = this.selector.match(/<([\w-]*)>/);
+        if (matches === null || matches === undefined) {
+          throw 'Invalid Selector / Node';
+          return false;
+        }
+        var nodeName = matches[0].replace('<', '').replace('>', '');
+        this.element = document.createElement(nodeName);
+        break;
+      default:
+        this.element = document.querySelector(this.selector);
+    }
   }
- };
- domElement.prototype.on = function(event, callback) {
-  var evt = this.eventHandler.bindEvent(event, callback, this.element);
- }
- domElement.prototype.off = function(event) {
-  var evt = this.eventHandler.unbindEvent(event, this.element);
- }
- domElement.prototype.val = function(newVal) {
-  return (newVal !== undefined ? this.element.value = newVal : this.element.value);
- };
- domElement.prototype.append = function(html) {
-  this.element.innerHTML = this.element.innerHTML + html;
- };
- domElement.prototype.prepend = function(html) {
-  this.element.innerHTML = html + this.element.innerHTML;
- };
- domElement.prototype.html = function(html) {
-  if (html === undefined) {
-  return this.element.innerHTML;
+  on(event, callback) {
+    var evt = this.eventHandler.bindEvent(event, callback, this.element);
   }
-  this.element.innerHTML = html;
- };
- domElement.prototype.text = function(text) {
-  if (text === undefined) {
-  return this.element.textContent;
+  off(event) {
+    var evt = this.eventHandler.unbindEvent(event, this.element);
   }
-  this.element.textContent = text;
- };
- domElement.prototype.extendcss = function(el1, el2){
-  Array.prototype.slice.call(document.querySelector(el1).attributes).forEach(function(item) {
-    el2.setAttribute(item.name, item.value);
-  });
- }
- domElement.prototype.detectAdBlock = (mode) => {
-  var adBlockEnabled = false;
-  if(mode==='mild'){
-var testAd = document.createElement('div');
-testAd.innerHTML = '&nbsp;';
-testAd.className = 'adsbox';
-document.body.appendChild(testAd);
-const req = document.createElement('div');
-const okbut = document.createElement('button');
-okbut.innerHTML = 'Okay';
-req.innerHTML = "Hey there, mind blocking our ads? Thats fine, but you're cutting our income."+
-"Could you please disable it? Stop us from getting bankrupt."
-Object.assign(req.style, {
-position: 'fixed',
-bottom: '0%',
-width: '100%',
-height: 'auto',
-'text-align': 'center',
-border: '1px solid black',
-})
-window.setTimeout(function() {
-if (testAd.offsetHeight === 0) {
-adBlockEnabled = true;
-req.appendChild(okbut);
-document.body.appendChild(req);
-}
-okbut.addEventListener('click', ()=>{
-req.remove();
-})
-testAd.remove();
-console.log('AdBlock Enabled? ', adBlockEnabled)
-}, 300);
+  val(newVal) {
+    return (newVal !== undefined ? this.element.value = newVal : this.element.value);
   }
-  else if(mode === 'harsh'){
-    var testAd = document.createElement('div');
-testAd.innerHTML = '&nbsp;';
-testAd.className = 'adsbox';
-document.body.appendChild(testAd);
-window.setTimeout(function() {
-if (testAd.offsetHeight === 0) {
-adBlockEnabled = true;
-if(adBlockEnabled){
-  document.body.innerHTML = "Please disable your adblocker!";
-}
-}
-
-testAd.remove();
-console.log('AdBlock Enabled? ', adBlockEnabled)
-}, 300);
+  append(html) {
+    this.element.innerHTML = this.element.innerHTML + html;
   }
-};
-domElement.prototype.register = function(type){
+  prepend(html) {
+    this.element.innerHTML = html + this.element.innerHTML;
+  }
+  html(html) {
+    if (html === undefined) {
+      return this.element.innerHTML;
+    }
+    this.element.innerHTML = html;
+  }
+  text(text) {
+    if (text === undefined) {
+      return this.element.textContent;
+    }
+    this.element.textContent = text;
+  }
+  extendcss(el1, el2) {
+    Array.prototype.slice.call(document.querySelector(el1).attributes).forEach(function (item) {
+      el2.setAttribute(item.name, item.value);
+    });
+  }
+  detectAdBlock(mode) {
+    var adBlockEnabled = false;
+    if (mode === 'mild') {
+      var testAd = document.createElement('div');
+      testAd.innerHTML = '&nbsp;';
+      testAd.className = 'adsbox';
+      document.body.appendChild(testAd);
+      const req = document.createElement('div');
+      const okbut = document.createElement('button');
+      okbut.innerHTML = 'Okay';
+      req.innerHTML = "Hey there, mind blocking our ads? Thats fine, but you're cutting our income." +
+        "Could you please disable it? Stop us from getting bankrupt.";
+      Object.assign(req.style, {
+        position: 'fixed',
+        bottom: '0%',
+        width: '100%',
+        height: 'auto',
+        'text-align': 'center',
+        border: '1px solid black',
+      });
+      window.setTimeout(function () {
+        if (testAd.offsetHeight === 0) {
+          adBlockEnabled = true;
+          req.appendChild(okbut);
+          document.body.appendChild(req);
+        }
+        okbut.addEventListener('click', () => {
+          req.remove();
+        });
+        testAd.remove();
+        console.log('AdBlock Enabled? ', adBlockEnabled);
+      }, 300);
+    }
+    else if (mode === 'harsh') {
+      var testAd = document.createElement('div');
+      testAd.innerHTML = '&nbsp;';
+      testAd.className = 'adsbox';
+      document.body.appendChild(testAd);
+      window.setTimeout(function () {
+        if (testAd.offsetHeight === 0) {
+          adBlockEnabled = true;
+          if (adBlockEnabled) {
+            document.body.innerHTML = "Please disable your adblocker!";
+          }
+        }
+        testAd.remove();
+        console.log('AdBlock Enabled? ', adBlockEnabled);
+      }, 300);
+    }
+  }
+  register(type) {
     type(this.selector);
-}
-domElement.prototype.load = function(fn){
-  (this.selector).onload = fn();
-}
-domElement.prototype.ready = function(callback){ 
-  if ((this.selector).readyState!='loading') callback();
-  // modern browsers
-  else if ((this.selector).addEventListener) (this.selector).addEventListener('DOMContentLoaded', callback);
-  // IE <= 8
-  else (this.selector).attachEvent('onreadystatechange', function(){
-      if ((this.selector).readyState=='complete') callback();
-  });
   }
+  load(fn) {
+    (this.selector).onload = fn();
+  }
+  ready(callback) {
+    if ((this.selector).readyState != 'loading')
+      callback();
+    // modern browsers
+    else if ((this.selector).addEventListener)
+      (this.selector).addEventListener('DOMContentLoaded', callback);
+    // IE <= 8
+    else
+      (this.selector).attachEvent('onreadystatechange', function () {
+        if ((this.selector).readyState == 'complete')
+          callback();
+      });
+  }
+}
  domElement.prototype.eventHandler = {
   events: [],
   bindEvent: function(event, callback, targetElement) {
@@ -363,4 +368,3 @@ request.onerror = function() {
 
 request.send();
 }
-
