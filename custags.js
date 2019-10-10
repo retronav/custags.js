@@ -233,8 +233,8 @@ class domElement {
     (this.element).classList.remove(className);
   }
   extendcss(el1, el2) {
-    Array.prototype.slice.call(document.querySelector(el1).attributes).forEach(function (item) {
-      document.querySelector(el2).setAttribute(item.name, item.value);
+    Array.prototype.slice.call(el1.attributes).forEach(function (item) {
+      el2.setAttribute(item.name, item.value);
     });
   }
   /* property functions end */
