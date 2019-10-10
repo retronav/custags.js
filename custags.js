@@ -233,10 +233,17 @@ class domElement {
     (this.element).classList.remove(className);
   }
   extendcss(el1, el2) {
+    if(typeof(el1) == 'object' && typeof(el2) == 'object'){
     Array.prototype.slice.call(el1.attributes).forEach(function (item) {
       el2.setAttribute(item.name, item.value);
     });
   }
+  else{
+    Array.prototype.slice.call(document.querySelector(el1).attributes).forEach(function (item) {
+      document.querySelector(el2).setAttribute(item.name, item.value);
+    });
+  }
+};
   /* property functions end */
   /* animate functions start */
   hide(){
