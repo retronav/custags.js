@@ -172,15 +172,39 @@ class domElement {
         this.element = document.querySelector(this.selector);
     }
   }
+  val(newVal) {
+    return (newVal !== undefined ? this.element.value = newVal : this.element.value);
+  }
+  /* event functions start*/
   on(event, callback) {
     var evt = this.eventHandler.bindEvent(event, callback, this.element);
   }
   off(event) {
     var evt = this.eventHandler.unbindEvent(event, this.element);
   }
-  val(newVal) {
-    return (newVal !== undefined ? this.element.value = newVal : this.element.value);
+  click(callback){
+    var evt = this.eventHandler.bindEvent("click", callback, this.element);
   }
+  mouseover(callback){
+    var evt = this.eventHandler.bindEvent("mouseover", callback, this.element);
+  }
+  mouseout(callback){
+    var evt = this.eventHandler.bindEvent("mouseout", callback, this.element);
+  }
+  dblclick(callback){
+    var evt = this.eventHandler.bindEvent("dblclick", callback, this.element);
+  }
+  keypress(callback){
+    var evt = this.eventHandler.bindEvent("keypress", callback, this.element);
+  }
+  keydown(callback){
+    var evt = this.eventHandler.bindEvent("keydown", callback, this.element);
+  }
+  keyup(callback){
+    var evt = this.eventHandler.bindEvent("keyup", callback, this.element);
+  }
+  /* Event functions end*/
+  /* Properties functions start */
   append(html) {
     this.element.innerHTML = this.element.innerHTML + html;
   }
@@ -193,17 +217,42 @@ class domElement {
     }
     this.element.innerHTML = html;
   }
+  css(css){
+    this.element.css = css;
+  }
   text(text) {
     if (text === undefined) {
       return this.element.textContent;
     }
     this.element.textContent = text;
   }
+  addClass(className){
+    (this.element).classList.add(className);
+  }
+  removeClass(className){
+    (this.element).classList.remove(className);
+  }
   extendcss(el1, el2) {
     Array.prototype.slice.call(document.querySelector(el1).attributes).forEach(function (item) {
-      el2.setAttribute(item.name, item.value);
+      document.querySelector(el2).setAttribute(item.name, item.value);
     });
   }
+  /* property functions end */
+  /* animate functions start */
+  hide(){
+    (this.element).style.display = "none";
+  }
+  show(){
+    (this.element).style.display = "";
+  }
+  fadeIn(time){
+    (this.element).classList.add('faded');
+    (this.element).classList.add('show');
+    document.querySelector('.show').style.cssText = {transition: "opacity "+time+"ms"};
+    document.querySelector('.faded').style.cssText = {opacity: "0"};
+
+  }
+  /* animate functions end */
   detectAdBlock(mode) {
     var adBlockEnabled = false;
     if (mode === 'mild') {
