@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Custags.js</title>
+</head>
+<body>
+   <fn-name>register()</fn-name>
+   <fn-desc></fn-desc>
+   <fn-desc>If your syntax markup is like this
+   <pre>
+      <code class="language-html">&lt;chat-app&gt;
+            &lt;text-module&gt;&lt;/text-module&gt;
+            &lt;submit-btn&gt;Submit&lt;/submit-btn&gt;
+      &lt;/chat-app&gt;</code>
+   </pre>
+   Wherein the <code>chat-app</code> is the wrapper div, the <code>text-module</code> is the input tag, and the <code>submit-btn</code> is the button.
+   Custags.js makes it easier than ever to define them without any hassle. To define them, you do this in javascript:
+   <pre>
+      <code class="language-js">Ω('chat-app').register(div);
+      Ω('text-module').register(inputText);
+      Ω('submit-btn').register(button);</code>
+   </pre>
+   </fn-desc>
+   <fn-desc>If you want to do something on clicking the button, and want a reference, just put a # before the tag name as the
+      selector, like this:-
+      <pre>
+            <code class="language-js">Ω('#submit-btn').on('click', ()=>{
+            alert(Ω('#text-module').val());
+            //or document.querySelector('#text-module').value;   
+            });</code>
+         </pre>
+         Check the combined demo below:-
+   </fn-desc>
+   <code-container style="border: 2px groove grey; padding: 2vh; max-width: 50%; text-align: center;">
+         <chat-app>
+            <text-module></text-module>
+            <submit-btn>Submit</submit-btn>
+         </chat-app>
+         </code-container>
+   <link rel="stylesheet" href="index/css/prism.css">
+   <link rel="stylesheet" href="index/css/prism-numbers.css">
+   <script src="https://bit.ly/custagsmin"></script>
+   <script src="index/js/prism.js"></script>
+   <script src="index/js/prism-numbers.js"></script>
+   <script src="definitions.js"></script>
+   <script>
+   Ω('chat-app').register(div);
+      Ω('text-module').register(inputText);
+      Ω('submit-btn').register(button);
+      Ω('#submit-btn').on('click', ()=>{
+         alert(Ω('#text-module').val());
+      });
+   </script>
+</body>
+</html>
