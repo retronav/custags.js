@@ -1,0 +1,27 @@
+html{
+   height: 100%;
+   width: 100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   -webkit-user-select: none;
+   user-select: none;
+   -khtml-user-select: none;
+   -ms-user-select: none;
+   -moz-user-select: none;
+   -o-user-select: none;
+}
+body{
+   height: 100%;
+   width: 100%;
+   background-color: aquamarine;
+   text-align: center;
+}
+#topic-name{
+   font-size: 10vh;
+}
+#strong-text{
+   font-size: 15vh;
+   background-image: linear-gradient(90deg, red, azure);
+   color: transparent;
+   background-clip: text;
+   -webkit-background-clip: text;
+}

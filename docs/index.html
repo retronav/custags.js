@@ -8,11 +8,49 @@
 </head>
 <body>
    <main-wrap>
-      <header>
+      <div class="section head">
          <topic-name>Custags.js</topic-name>
-      </header>
+         <sub-topic>Custom elements, now a reality.</sub-topic>
+         <article>
+            <pre>
+         <code class="language-html" style="max-width: 50vh; overflow: scroll;">
+            &lt;!-- Looks like XML, does work like HTML--&gt;
+            &lt;weather-module&gt;
+            &lt;weather-icon src="pics/cloudy.png"&gt;&lt;/weather-icon&gt;
+            &lt;weather-status&gt;Overcast with clouds&lt;/weather-status&gt;
+            &lt;city-name&gt;London&lt;/city-name&gt;
+            &lt;temp-real&gt;16 C&lt;/temp-real&gt;
+            &lt;humidity-real&gt;13%&lt;/humidity-real&gt;
+            &lt;/weather-module&gt; 
+         </code>
+         </pre>
+         </article>
+   </div>
+   <div class="section s2">
+      <topic-name>Use "Ω" or "omega" <br> Do amazing things</topic-name>
+      <pre>
+         <code class="language-js">
+            Ω('weather-module').register(div);
+            Ω.detectAdBlock('mild', 'Please disable your adBlocker to help us earn');
+            Ω.zax({
+               type: GET,
+               url: 'test.json',
+               success: (response)=>{
+                  const json = JSON.parse(response)
+                  console.log(response)
+               }
+            })
+            Ω('.text').html(Ω('typewriter').val());
+         </code>
+      </pre>
+   </div>
    </main-wrap>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/prism.css">
+   <link rel="stylesheet" href="css/fullpage.min.css">
+   <script src="js/fullpage.min.js"></script>
+   <script src="js/prism.js"></script>
    <script src="src/custags.min.js"></script>
-   <script src="main.js"></script>
+   <script src="js/main.js"></script>
 </body>
 </html>
