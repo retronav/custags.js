@@ -32,3 +32,12 @@ pre{
    display: inline-block;
   text-align: left;
 }
+#download-btn{
+   border: 0ch solid black;
+   border-radius:10px ;
+   color: cadetblue;
+   width: 20vh;
+   height: 10vh;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size:3vh;
+}

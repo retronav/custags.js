@@ -4,6 +4,7 @@
 Ω('main-wrap').register(div);
 Ω('download-btn').register(button);
 Ω('code-container').register(div);
+Ω('go-to').register(a);
 new fullpage('#main-wrap', {
    autoScrolling: true,
    navigation: true,
