@@ -223,6 +223,19 @@ self.on = (event, callback)=> {
    self.element.innerText = text;
    return self;
   }
+  self.ready = (callback) => {
+    if ((selector).readyState != 'loading')
+      callback();
+    // modern browsers
+    else if ((selector).addEventListener)
+      (selector).addEventListener('DOMContentLoaded', callback);
+    // IE <= 8
+    else
+      (selector).attachEvent('onreadystatechange', function () {
+        if ((selector).readyState == 'complete')
+          callback();
+      });
+  }
 return self;
 };
 ((Ω)=>{
@@ -314,18 +327,6 @@ return self;
     
     request.send();
     }
-    Ω.extendcss = (el1, el2) => {
-     if(typeof(el1) == 'object' && typeof(el2) == 'object'){
-     Array.prototype.slice.call(el1.attributes).forEach(function (item) {
-       el2.setAttribute(item.name, item.value);
-     });
-   }
-   else{
-     Array.prototype.slice.call(document.querySelector(el1).attributes).forEach(function (item) {
-       document.querySelector(el2).setAttribute(item.name, item.value);
-     });
-   }
- }
     Ω.getXML = function(url, fn){
       var request = new XMLHttpRequest();
     request.open('GET', url, true);
