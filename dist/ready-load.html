@@ -7,9 +7,58 @@
    <title>Custags.js</title>
 </head>
 <body>
-   
-   <link rel="stylesheet" href="dist/index/css/styles.css">
-   <link rel="stylesheet" href="dist/index/css/prism.css">
-   <script src="custags.min.js"></script>
+   <main-wrap>
+      <fn-name>ready()</fn-name>
+      <fn-desc>Use this function to execute code only when
+         the document is ready. Implies readyState of the document.
+      </fn-desc>
+      <code-container>
+         <pre class="line-number">
+            <code class="language-js">
+               Ω('document').ready(()=>{
+                  //do stuff here
+                  //test function
+                  alert('ready() called');
+               })
+            </code>
+         </pre>
+      </code-container>
+      <trial-btn onclick="readyTrial()">Click to see trial</trial-btn>
+      <hr>
+      <fn-name>load()</fn-name>
+      <fn-desc>Use this function to execute code only when
+         the window has loaded fully. Implies DOMContentLOaded of the document.
+      </fn-desc>
+      <code-container>
+         <pre class="line-number">
+            <code class="language-js">
+               Ω('window').load(()=>{
+                  //do stuff here
+                  //test function
+                  alert('load() called');
+               })
+            </code>
+         </pre>
+      </code-container>
+      <trial-btn onclick="loadTrial()">Click to see trial</trial-btn>
+   </main-wrap>
+   <link rel="stylesheet" href="index/css/prism.css">
+   <link rel="stylesheet" href="index/css/prism-numbers.css">
+   <script src="/custags.min.js"></script>
+   <script src="index/js/prism.js"></script>
+   <script src="index/js/prism-numbers.js"></script>
+   <script src="definitions.js"></script>
+   <script>
+         const readyTrial = ()=>{
+            Ω('document').ready(()=>{
+               alert('ready() called');
+            })
+         }
+         const loadTrial = ()=>{
+            Ω('window').load(()=>{
+                  alert('load() called');
+               })
+         }
+         </script>
 </body>
 </html>
