@@ -235,6 +235,11 @@ self.on = (event, callback)=> {
         if ((selector).readyState == 'complete')
           callback();
       });
+      return self;
+  }
+  self.load = (callback) => {
+    selector.onload = callback();
+    return self;
   }
 return self;
 };
