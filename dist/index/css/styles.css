@@ -25,3 +25,10 @@ body{
    background-clip: text;
    -webkit-background-clip: text;
 }
+#code-container{
+   text-align: center;
+}
+pre{
+   display: inline-block;
+  text-align: left;
+}
