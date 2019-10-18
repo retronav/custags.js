@@ -2,3 +2,4 @@
 Ω('fn-desc').register(p);
 Ω('code-container').register(div);
 Ω('trial-btn').register(button);
+Ω('codepen-frame').register(iframe);
