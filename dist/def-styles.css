@@ -8,6 +8,12 @@ body{
 button, input{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 #fn-name{
    color: rgb(214, 155, 28);
 }
@@ -27,7 +33,6 @@ button, input{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    font-size:3vh;
    transition: 0.75s ease-in-out;
-   text-align: center;
 }
 #trial-btn:hover{
    background-color:red ;

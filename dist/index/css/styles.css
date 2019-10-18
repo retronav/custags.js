@@ -9,6 +9,12 @@ html{
    -moz-user-select: none;
    -o-user-select: none;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 body{
    height: 100%;
    width: 100%;
