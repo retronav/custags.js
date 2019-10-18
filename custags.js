@@ -191,7 +191,7 @@ self.on = (event, callback)=> {
    var evt = self.eventHandler.unbindEvent(event, self.element);
    return self;
  }
- self.val = (newVal)=> {
+ self.val = self.value = (newVal)=> {
    return (newVal !== undefined ? self.element.value = newVal : self.element.value);
    return self;
  }
@@ -199,8 +199,10 @@ self.on = (event, callback)=> {
    self.element.innerHTML = self.element.innerHTML + html;
    return self;
  }
- self.css = (css)=> {
-   (self.element).style.cssText = css;
+ self.css = (name, value)=> {
+   document.querySelectorAll(selector).forEach((el)=>{
+     el.style[name] = value;
+   });
  }
  self.prepend = (html)=> {
    self.element.innerHTML = html + self.element.innerHTML;
@@ -244,9 +246,6 @@ self.on = (event, callback)=> {
 return self;
 };
 ((Ω)=>{
-   Ω.swal = (thing) => {
-      alert(thing);
-   }
    Ω.detectAdBlock = (mode, text) => {
       var adBlockEnabled = false;
       if (mode === 'mild') {
