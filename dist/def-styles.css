@@ -3,6 +3,7 @@ body{
    background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
    background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   text-align: center;
 }
 button, input{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,5 +12,24 @@ button, input{
    color: rgb(214, 155, 28);
 }
 #code-container{
-   background: white;
+   background: rgb(216, 215, 215);
+   display: inline-block;
+   width: 50%;
+   height: auto;
+}
+#trial-btn{
+   border: 0ch solid black;
+   border-radius:10px ;
+   color: red;
+   background-color: rgb(233, 225, 214);
+   width: 20vh;
+   height: auto;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size:3vh;
+   transition: 0.75s ease-in-out;
+   text-align: center;
+}
+#trial-btn:hover{
+   background-color:red ;
+   color: rgb(233, 225, 214);
 }
