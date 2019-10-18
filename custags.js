@@ -246,6 +246,7 @@ self.on = (event, callback)=> {
 return self;
 };
 ((Ω)=>{
+  Ω.version = "1.11";
    Ω.detectAdBlock = (mode, text) => {
       var adBlockEnabled = false;
       if (mode === 'mild') {
