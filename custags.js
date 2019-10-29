@@ -29,7 +29,7 @@ const inputBuild = (type) => tag => {
     element.innerHTML = ptag.innerHTML;
     extendCSS(tag, element);
     element.type = type;
-    let preid = tag.getAttribute('id')
+    let preid = tag.id
     element.setAttribute('id', preid+' '+tag);
     shadow.host.parentNode.replaceChild(element, shadow.host);
   });
