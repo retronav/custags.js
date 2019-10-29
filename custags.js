@@ -13,7 +13,7 @@ const build = (elementType) => tag => {
     const element = document.createElement(elementType);
     element.innerHTML = ptag.innerHTML;
     extendCSS(tag, element);
-    let preid = tag.getAttribute('id')
+    let preid = tag.id;
     element.setAttribute('id', preid+' '+tag);
     shadow.host.parentNode.replaceChild(element, shadow.host);
   });
