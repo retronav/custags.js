@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Custags.js</title>
+</head>
+<body>
+   <fn-name>Ω(...).html()</fn-name>
+   <fn-desc>This function will return the innerHTML of a element if the <code class="language-js">Ω(...).html()</code> function value is
+      null or will set the innerHTML of the element if some value is given like <code class="language-js">Ω(...).html("Some value")</code>.
+   </fn-desc>
+   <fn-desc>Example for getting innerHTML of a element
+   <pre>
+      <code class="language-html">&lt;a-sentence&gt;This is some innerHTML&lt;/a-sentence&gt;
+      &lt;submit-btn&gt;Submit&lt;/submit-btn&gt;</code>
+   </pre>
+   <pre>
+      <code class="language-js">Ω('#check-btn').on('click', ()=>{
+      alert(Ω('#a-sentence').html());   
+      });</code>
+      </pre>
+      See the demo
+   </fn-desc>
+      <code-container>
+            <a-sentence>This is some innerHTML</a-sentence>
+            <check-btn onclick="htmlGetTrial()">Submit</check-btn>
+      </code-container>
+      <fn-desc>To set the html of a element
+         <pre>
+            <code class="language-html">&lt;one-sentence&gt;This is original innerHTML&lt;/one-sentence&gt;
+            &lt;check-btn&gt;Change innerHTML&lt;/check-btn&gt;</code>
+         </pre>
+         <pre>
+            <code class="language-js">Ω('#check-btn').on('click', ()=>{
+               Ω('#a-sentence').html("Change innerHTML");  
+               });</code>
+            </pre>
+            See the demo
+      </fn-desc>
+      <code-container>
+         <one-sentence>This is some innerHTML</one-sentence>
+            <check-btn onclick="htmlSetTrial()">Change innerHTML</check-btn>
+      </code-container>
+   <link rel="stylesheet" href="index/css/prism.css">
+   <link rel="stylesheet" href="def-styles.css">
+   <link rel="stylesheet" href="index/css/prism-numbers.css">
+   <script src="/custags.min.js"></script>
+   <script src="index/js/prism.js"></script>
+   <script src="index/js/prism-numbers.js"></script>
+   <script src="definitions.js"></script>
+   <script>
+   Ω('a-sentence').register(h1);
+   Ω('one-sentence').register(h1);
+   Ω('check-btn').register(button);
+   const htmlGetTrial = ()=>{
+      alert(Ω('#a-sentence').html());
+      }
+      const htmlSetTrial = ()=>{
+         Ω('#one-sentence').html("Change innerHTML");
+      }
+   </script>
+</body>
+</html>
