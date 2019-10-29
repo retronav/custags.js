@@ -13,8 +13,7 @@ const build = (elementType) => tag => {
     const element = document.createElement(elementType);
     element.innerHTML = ptag.innerHTML;
     extendCSS(tag, element);
-    let preid = tag.id;
-    element.setAttribute('id', preid+' '+tag);
+    element.setAttribute('id', tag);
     shadow.host.parentNode.replaceChild(element, shadow.host);
   });
 };
@@ -29,8 +28,7 @@ const inputBuild = (type) => tag => {
     element.innerHTML = ptag.innerHTML;
     extendCSS(tag, element);
     element.type = type;
-    let preid = tag.id
-    element.setAttribute('id', preid+' '+tag);
+    element.setAttribute('id', tag);
     shadow.host.parentNode.replaceChild(element, shadow.host);
   });
 };
