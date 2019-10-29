@@ -12,7 +12,7 @@
          <topic-name>Custags.js</topic-name>
          <sub-topic>Custom elements, now a reality.</sub-topic>
          <code-container>
-            <pre style="max-width: 50%;">
+            <pre style="max-width: 50%;" class="line-number">
          <code class="language-html" style="max-width: 50vh;">
             &lt;!-- Looks like XML, does work like HTML--&gt;
             &lt;weather-module&gt;
@@ -31,19 +31,17 @@
    <div class="section s2">
       <topic-name>Loads of things to do</topic-name>
       <pre style="max-width: 50%;">
-         <code class="language-js">
-            Ω('weather-module').register(div);
-            Ω.detectAdBlock('mild', 'Please disable your adBlocker to help us earn');
-            Ω.zax({
-               type: GET,
-               url: 'test.json',
-               success: (response)=>{
-                  const json = JSON.parse(response)
-                  console.log(response)
-               }
-            })
-            Ω('.text').html(Ω('typewriter').val());
-         </code>
+         <code class="language-js">Ω('weather-module').register(div);
+         Ω.detectAdBlock(()=>{alert('Please disable your adBlocker to help us earn')});
+         Ω.zax({
+            type: GET,
+            url: 'test.json',
+            success: (response)=>{
+               const json = JSON.parse(response)
+               console.log(response)
+            }
+         })
+         Ω('.text').html(Ω('typewriter').val());</code>
       </pre>
    </div>
    <div class="section links">
@@ -57,9 +55,9 @@
    </main-wrap>
    <link rel="stylesheet" href="dist/index/css/styles.css">
    <link rel="stylesheet" href="dist/index/css/prism.css">
-   <link rel="stylesheet" href="dist/index/css/fullpage.min.css">
-   <script src="dist/index/js/fullpage.min.js"></script>
+   <link rel="stylesheet" href="dist/index/css/prism-numbers.css">
    <script src="dist/index/js/prism.js"></script>
+   <script src="dist/index/js/prism-numbers.js"></script>
    <script src="custags.min.js"></script>
    <script src="dist/index/js/main.js"></script>
 </body>
