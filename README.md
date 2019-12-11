@@ -1,5 +1,4 @@
 # custags.js
-![logo](https://raw.githubusercontent.com/obnoxiousnerd/custags.js/master/custags-logo.png)
 [![](https://data.jsdelivr.com/v1/package/npm/custags.js/badge)](https://www.jsdelivr.com/package/npm/custags.js)
 ## A library that unleashes the power of custom elements.
 ## Add this for the latest version
