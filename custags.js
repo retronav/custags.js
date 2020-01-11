@@ -17,7 +17,7 @@ const build = (elementType) => tag => {
     shadow.host.parentNode.replaceChild(element, shadow.host);
   });
 };
-/*input tag builds*/
+/*input tag builder*/
 const inputBuild = (type) => tag => {
   const query = document.querySelectorAll(tag);
   query.forEach(ptag => {
